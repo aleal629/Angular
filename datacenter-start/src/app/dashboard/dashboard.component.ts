@@ -1,14 +1,14 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
 interface Metric {
-  used: number,
-  available: number
-};
+  used: number;
+  available: number;
+}
 interface Node {
-  name: string,
-  cpu: Metric,
-  mem: Metric
-};
+  name: string;
+  cpu: Metric;
+  mem: Metric;
+}
 
 @Component({
   selector: 'app-dashboard',
