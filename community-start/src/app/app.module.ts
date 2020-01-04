@@ -17,11 +17,13 @@ import { AuthGuardService } from './services/auth-guard.service';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'users', component: ChatListComponent, outlet: 'chat', canActivate: [AuthGuardService] },
-  { path: 'users/:username', component: ChatComponent, outlet: 'chat', canActivate: [AuthGuardService] },
+  { path: 'users', component: ChatListComponent, outlet: 'chat', canActivate: [ AuthGuardService ] },
+  { path: 'users/:username', component: ChatComponent, outlet: 'chat', canActivate: [ AuthGuardService ] },
+  { path: 'blogs', loadChildren: 'app/blogs/blogs.module#BlogsModule' },
   { path: '', redirectTo: '/forums', pathMatch: 'full' },
   { path: '**', component: NotFoundComponent },
 ];
+
 
 
 
