@@ -16,11 +16,8 @@
           </md-error>
         </md-input-container>
         <md-input-container>
-          <input name="phone" mdInput type="tel" placeholder="Phone" [(ngModel)]="customer.phone" required #phone="ngModel" minlength="7">
-          <md-error *ngIf="phone.touched && phone.errors?.required">
-            Phone number is required
-          </md-error>
-          <md-error *ngIf="phone.touched && phone.errors?.minlength">
+          <input name="phone" mdInput type="tel" placeholder="Phone" [(ngModel)]="customer.phone" required phone #phone="ngModel">
+          <md-error *ngIf="phone.touched && phone.errors?.phone">
             Not a valid phone number
           </md-error>
         </md-input-container>
@@ -28,7 +25,6 @@
 
         {{customer | json}}
       </md-card-content>
-
 
       <md-card-actions>
         <button type="button" md-button>Delete</button>
