@@ -72,15 +72,16 @@ export class InvoiceFormComponent implements OnInit {
 
   save() {
     if (this.invoice.id) {
-      this.invoicesService.update<Invoice>(this.invoice.id, this.invoice).subscribe(response => {
+      this.invoicesService.update<Invoice>(this.invoice.id, this.invoiceForm.value).subscribe(response => {
         this.viewInvoice(response.id);
       });
     } else {
-      this.invoicesService.create<Invoice>(this.invoice).subscribe(response => {
+      this.invoicesService.create<Invoice>(this.invoiceForm.value).subscribe(response => {
         this.viewInvoice(response.id);
       });
     }
   }
+
 
   delete() {
     this.dialogService.openConfirm({
